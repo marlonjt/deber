@@ -1,0 +1,48 @@
+
+    <accordion >
+        <div *ngFor="let ejemplo of ejemplos">
+            <accordion-group heading="Static Header">
+              {{ejemplo.nombre}}
+              </accordion-group>
+        </div>
+     </accordion>
+
+
+<div class="container">
+  <carousel>
+    <slide>
+      <img src="assets/img/1.jpg" alt="first slide" style="display: block;  height:50%; width:100%;">
+    </slide>
+    <slide>
+      <img src="assets/img/2.jpg" alt="second slide" style="display: block; height:50%; width:100%;">
+    </slide>
+    <slide>
+      <img src="assets/img/3.jpg" alt="third slide" style="display: block; height:50%; width:100%;">
+    </slide>
+  </carousel>
+</div>
+
+
+  <div class="container">
+      <tabset>
+        <tab heading="nombre" id="tab1">juan</tab>
+        <tab heading="apellido">perez</tab>
+        <tab heading="curso">10</tab>
+        <tab heading="edad">15</tab>
+      </tabset>
+  </div>
+
+<div class="container" align="center">
+<button type="button" class="btn btn-primary" (click)="openModal(template)">click</button>
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+  hola mundo
+  </div>
+</ng-template>
+</div>

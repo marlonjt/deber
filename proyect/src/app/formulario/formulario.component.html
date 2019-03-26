@@ -1,0 +1,156 @@
+<!-- <div class="container">
+  <form class="example-form" [formGroup]=datosGenerales>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Email" formControlName="email" [errorStateMatcher]="matcher">
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error
+        *ngIf="datosGenerales.controls['email'].hasError('email') || !datosGenerales.controls['email'].hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="datosGenerales.controls['email'].hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+
+<div class="container text-center">
+  <div class="example-container" [formGroup]=datosGenerales>
+    <mat-form-field>
+      <input matInput placeholder="contraseña" formControlName="contraseña" [type]="hide ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <mat-error
+        *ngIf="datosGenerales.controls['contraseña'].hasError('contraseña') || !datosGenerales.controls['contraseña'].hasError('required')">
+        Please enter a contraseña
+      </mat-error>
+      <mat-error *ngIf="datosGenerales.controls['contraseña'].hasError('required')">
+        contraseña is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div> -->
+  <div class="cabecera" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Inug</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Instituto</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </div>
+<div class="container" class="cuerpo">
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">home</mat-icon>
+        Institutos
+      </ng-template>
+      <div class="form-group">
+        <div align="center">
+          <div class="formato">
+            <label for="exampleFormControlSelect1"></label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <mat-icon class="example-tab-icon">search</mat-icon>
+              <option>BENITO JUAREZ</option>
+              <option>GRAN COLOMBIA</option>
+              <option>24 DE MAYO</option>
+            </select>
+            <br><br>
+            <div align="center">
+              <button type="button" class="btn btn-primary">INFORMACION</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">person</mat-icon>
+        Personas
+      </ng-template>
+      <div class="container mt-5">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">home</mat-icon>
+          Institutos
+        </ng-template>
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <!-- apellido Column -->
+          <ng-container matColumnDef="apellido">
+            <th mat-header-cell *matHeaderCellDef> apellido </th>
+            <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> Symbol </th>
+            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">book</mat-icon>
+        Carreras
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<div class="lateral">
+  <accordion>
+    <accordion-group heading="Docentes">      
+    </accordion-group>
+    <accordion-group heading="Estudiantes">
+    </accordion-group>
+    <accordion-group heading="Institutos">
+      <p>Benito Juarez </p>
+    </accordion-group>
+    <accordion-group heading="Carreras">
+      <p>desarollo de software</p>
+    </accordion-group>
+  </accordion>
+</div>
+<div align="center">
+  <div class="pie">
+    <mat-icon>public</mat-icon>
+    YAVIRAC
+    <mat-icon>share</mat-icon>
+    BUSCANOS
+    <mat-icon>streetview</mat-icon>
+    UBICACION
+  </div>
+</div>
