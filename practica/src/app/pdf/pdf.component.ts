@@ -37,7 +37,7 @@ export class PdfComponent implements OnInit {
 
     doc.text(20, 90, 'CARRERA:')
     doc.setFontSize(15)
-    doc.getLineHeightFactor()
+    doc.getLineHeightFactor() 
     doc.text(20, 100, 'D.Software')
     doc.rect(60, 96, 5, 5)  
     doc.text(70, 100, 'D.Modas')
